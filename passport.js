@@ -1,5 +1,4 @@
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
-import { User } from "./models/index.js";
 import passport from "passport";
 
 passport.serializeUser((user, done) => {
@@ -18,12 +17,7 @@ passport.use(
       userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
     },
     function (accessToken, refreshToken, profile, done) {
-      //User.findOrCreate({ googleId: profile.id }, function (err, user) {
-      // return cb(err, user);
-      //});
       done(null, profile);
-      console.log(accessToken);
-      console.log(refreshToken);
     },
   ),
 );
