@@ -8,7 +8,7 @@ import {
 
 const eventRouter = express.Router();
 
-eventRouter.post("/add", saveEventController);
+eventRouter.post("/", saveEventController);
 eventRouter.delete("/:id", deleteEventController);
 eventRouter.put("/:id", updateEventController);
 eventRouter.get("/", getEventsController);

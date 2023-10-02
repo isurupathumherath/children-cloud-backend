@@ -3,7 +3,7 @@ import { getUser } from "../repository/index.js";
 
 export const authenticate = async (req, res, next) => {
   try {
-    const token = req.header("Authorization").replace("Bearer ", "");
+    const token = req.headers.authorization.split(" ")[1];
     const { _id } = jwt.verify(token, process.env.JWT_SECRET);
     const user = await getUser({ _id });
     if (!user) {

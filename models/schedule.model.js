@@ -40,6 +40,18 @@ const ScheduleSchema = new Schema(
       type: String,
       default: "Staff didn't Assigned",
     },
+    date: {
+      type: String,
+      default: "date did not added",
+    },
+    status: {
+      type: String,
+      default: "pending",
+    },
+    description: {
+      type: String,
+      default: "description not added for the above date",
+    },
   },
   { timestamps: true, versionKey: false },
 );

@@ -4,6 +4,8 @@ import {
   deleteMedicine,
   getMedicines,
   updateStaff,
+  getMedicinesForStaff,
+  getMedicinesForParents,
 } from "./medicine.repository.js";
 import {
   saveEvent,
@@ -17,6 +19,8 @@ import {
   deleteChild,
   getChilds,
   getAllChilds,
+  getAllStaffUser,
+  getChildByID,
 } from "./child.repository.js";
 
 import {
@@ -28,6 +32,8 @@ import {
   getPendingStaff,
   updateAssignedStaffStatus,
   updateAssignStaffData,
+  getStaffByChildID,
+  getAssignedKidsForStaff,
 } from "./assignStaff.repository.js";
 
 import {
@@ -35,7 +41,24 @@ import {
   updateSchedule,
   deleteSchedule,
   getSchedules,
+  updateStaffSchedule,
+  getScheduleForStaff,
 } from "./schedule.repository.js";
+
+import {
+  saveEmployee,
+  updateEmployee,
+  deleteEmployee,
+  getEmployee,
+  getAllEmployee,
+} from "./employeeReg.repository.js";
+
+import {
+  saveAttendance,
+  getAttendance,
+  getAllAttendance,
+  updateAttendance,
+} from "./attendance.repository.js";
 
 import {
   savePayment,
@@ -64,11 +87,37 @@ import {
   getItemByChildId,
 } from "./item.repository.js";
 
+import {
+  savePaymentInq,
+  getPaymentInq,
+  getPaymentInqById,
+  getPaymentInqByBillId,
+  getPaymentInqByPaymentId,
+  updatePaymentInq,
+  deletePaymentInq,
+} from "./paymentInquery.repository.js";
+
+import {
+  saveBabySitter,
+  deleteBabySitter,
+  updateBabySitter,
+  getAllBabySitter,
+  getBabySitter,
+} from "./childAllocate.repository.js";
+
 export {
   saveMedicine,
   updateMedicine,
   deleteMedicine,
   getMedicines,
+  saveEmployee,
+  updateEmployee,
+  deleteEmployee,
+  getEmployee,
+  getAllEmployee,
+  saveAttendance,
+  getAttendance,
+  getAllAttendance,
   saveEvent,
   updateEvent,
   deleteEvent,
@@ -91,6 +140,8 @@ export {
   updateAssignedStaffStatus,
   updateAssignStaffData,
   updateStaff,
+  updateStaffSchedule,
+  getStaffByChildID,
   savePayment,
   getPayment,
   getPaymentById,
@@ -109,5 +160,24 @@ export {
   updateItem,
   deleteItem,
   getItemByChildId,
+  saveBabySitter,
+  deleteBabySitter,
+  updateBabySitter,
+  getAllBabySitter,
+  getBabySitter,
+  getAllStaffUser,
+  getChildByID,
+  getMedicinesForStaff,
+  getAssignedKidsForStaff,
+  getScheduleForStaff,
+  getMedicinesForParents,
+  savePaymentInq,
+  getPaymentInq,
+  getPaymentInqById,
+  getPaymentInqByBillId,
+  getPaymentInqByPaymentId,
+  updatePaymentInq,
+  deletePaymentInq,
+  updateAttendance,
 };
 export * from "./user.repository.js";

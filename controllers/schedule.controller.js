@@ -3,6 +3,7 @@ import {
   updateScheduleService,
   deleteScheduleService,
   getSchedulesService,
+  getSchedulesForStaffService,
 } from "../services/index.js";
 import Success from "../utils/success.js";
 
@@ -38,6 +39,16 @@ export const getSchedulesController = async (req, res) => {
     const childID = req.params.id;
     const schedules = await getSchedulesService(childID);
     res.json(Success(schedules, "Successfully Fetched Schedules Details."));
+  } catch (err) {
+    res.status(err.status).json(err.message);
+  }
+};
+
+export const getScheduleForStaffController = async (req, res) => {
+  try {
+    const staffID = req.user._id;
+    const schedules = await getSchedulesForStaffService(staffID);
+    res.json(Success(schedules, "Successfully Fetched Medicines Details."));
   } catch (err) {
     res.status(err.status).json(err.message);
   }

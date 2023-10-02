@@ -7,6 +7,7 @@ import {
   viewProfile,
   updateUser,
   deleteUser,
+  getStaffController,
 } from "../controllers/index.js";
 import { authenticate } from "../middleware/auth.middleware.js";
 
@@ -19,5 +20,6 @@ userRouter.get("/:id", authenticate, getUser);
 userRouter.get("/", authenticate, getAllUsers);
 userRouter.put("/:id", authenticate, updateUser);
 userRouter.delete("/:id", authenticate, deleteUser);
+userRouter.get("/stf", getStaffController);
 
 export default userRouter;

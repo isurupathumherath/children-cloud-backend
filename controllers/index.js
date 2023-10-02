@@ -3,7 +3,24 @@ import {
   updateMedicineController,
   deleteMedicineController,
   getMedicinesController,
+  getMedicinesForStaffController,
+  getMedicinesForParentController,
 } from "./medicine.controller.js";
+
+import {
+  saveEmployeeController,
+  updateEmployeeController,
+  deleteEmployeeController,
+  getEmployeeController,
+  getAllEmployeeController,
+} from "./employeeReg.controller.js";
+
+import {
+  saveAttendanceController,
+  getAllAttendanceController,
+  getAttendanceController,
+  updateAttenanceController,
+} from "./attendance.controller.js";
 
 import {
   saveEventController,
@@ -18,6 +35,9 @@ import {
   deleteChildController,
   getChildsController,
   getAllChildsController,
+  getChildstempController,
+  getStaffController,
+  getSingleChildController,
 } from "./child.controller.js";
 
 import {
@@ -25,6 +45,7 @@ import {
   updateScheduleController,
   deleteScheduleController,
   getSchedulesController,
+  getScheduleForStaffController,
 } from "./schedule.controller.js";
 
 import {
@@ -54,11 +75,46 @@ import {
   getItemByChildIdController,
 } from "./item.controller.js";
 
+import {
+  saveBabySitterController,
+  deleteBabySitterController,
+  updateBabySitterController,
+  getAllBabySitterController,
+  getBabySitterController,
+} from "./childAllocate.controller.js";
+
+import {
+  saveAssignStaffController,
+  updateAssignStaffController,
+  deleteAssignStaffController,
+  getAllAssignedStaffController,
+  getPendingAssignedStaffController,
+  getAssignedKidsForStaffController,
+} from "./assignStaff.controller.js";
+
+import {
+  savePaymentInqController,
+  getPaymentInqController,
+  getPaymentInqByIdController,
+  updatePaymentInqController,
+  deletePaymentInqController,
+  getPaymentInqByBillIdController,
+  getPaymentInqByPaymentIdController,
+} from "./paymentInq.controller.js";
+
 export {
   saveMedicineController,
   updateMedicineController,
   deleteMedicineController,
   getMedicinesController,
+  saveEmployeeController,
+  updateEmployeeController,
+  deleteEmployeeController,
+  getEmployeeController,
+  getAllEmployeeController,
+  saveAttendanceController,
+  getAllAttendanceController,
+  getAttendanceController,
   saveEventController,
   updateEventController,
   deleteEventController,
@@ -72,6 +128,12 @@ export {
   deleteScheduleController,
   getSchedulesController,
   getAllChildsController,
+  saveAssignStaffController,
+  updateAssignStaffController,
+  deleteAssignStaffController,
+  getAllAssignedStaffController,
+  getPendingAssignedStaffController,
+  getChildstempController,
   savePaymentController,
   getPaymentController,
   getPaymentByIdController,
@@ -90,5 +152,25 @@ export {
   updateItemController,
   deleteItemController,
   getItemByChildIdController,
+  saveBabySitterController,
+  deleteBabySitterController,
+  updateBabySitterController,
+  getAllBabySitterController,
+  getBabySitterController,
+  getStaffController,
+  getSingleChildController,
+  getMedicinesForStaffController,
+  getAssignedKidsForStaffController,
+  getScheduleForStaffController,
+  getMedicinesForParentController,
+  savePaymentInqController,
+  getPaymentInqController,
+  getPaymentInqByIdController,
+  updatePaymentInqController,
+  deletePaymentInqController,
+  getPaymentInqByBillIdController,
+  getPaymentInqByPaymentIdController,
+  updateAttenanceController,
 };
+
 export * from "./user.controller.js";

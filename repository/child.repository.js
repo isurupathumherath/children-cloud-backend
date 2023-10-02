@@ -1,4 +1,4 @@
-import { Child } from "../models/index.js";
+import { Child, User } from "../models/index.js";
 import AppError from "../utils/appError.js";
 
 export const saveChild = (data) =>
@@ -50,4 +50,25 @@ export const getAllChilds = () =>
     })
     .catch(() => {
       throw new AppError("Internal server error.", 500);
+    });
+
+export const getAllStaffUser = (role) =>
+  User.find({ role })
+    .then((staffs) => {
+      return Promise.resolve(staffs);
+    })
+    .catch(() => {
+      throw new AppError("Internal server error.", 500);
+    });
+
+export const getChildByID = (id) =>
+  Child.findById(id)
+    .then((child) => {
+      if (!child) {
+        throw new AppError("Payment Details not Found", 404);
+      }
+      return Promise.resolve(child);
+    })
+    .catch((err) => {
+      throw new AppError(`Internal Server Error: ${err}`, 500);
     });

@@ -22,6 +22,18 @@ export const updateSchedule = (id, data) =>
       throw new AppError("Internal server error.", 500);
     });
 
+export const updateStaffSchedule = (id, staffID) =>
+  Schedule.findByIdAndUpdate(id, { staffID }, { new: true })
+    .then((schedule) => {
+      if (!schedule) {
+        throw new AppError("Schedule Not Found", 404);
+      }
+      return Promise.resolve(schedule);
+    })
+    .catch(() => {
+      throw new AppError("Internal server error.", 500);
+    });
+
 export const deleteSchedule = (id) =>
   Schedule.findByIdAndDelete(id)
     .then((schedule) => {
@@ -38,6 +50,15 @@ export const getSchedules = (id) =>
   Schedule.find({ childID: id })
     .then((schedule) => {
       return Promise.resolve(schedule);
+    })
+    .catch(() => {
+      throw new AppError("Internal server error.", 500);
+    });
+
+export const getScheduleForStaff = (id) =>
+  Schedule.find({ staffID: id })
+    .then((schedules) => {
+      return Promise.resolve(schedules);
     })
     .catch(() => {
       throw new AppError("Internal server error.", 500);

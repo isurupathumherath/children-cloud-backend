@@ -10,6 +10,9 @@ const UserSchema = new Schema(
     userName: String,
     email: String,
     password: String,
+    mobile: String,
+    address: String,
+    url: String,
     role: String,
   },
   {

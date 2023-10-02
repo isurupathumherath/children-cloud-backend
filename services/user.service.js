@@ -22,7 +22,14 @@ export const save = async (data) => {
       const hash = await bcrypt.hash(password, salt);
       password = hash;
     }
-    await saveUser({ firstName, lastName, email, userName, password, role });
+    await saveUser({
+      firstName,
+      lastName,
+      email,
+      userName,
+      password,
+      role,
+    });
     return Promise.resolve("Successfully registered.");
   } catch (err) {
     throw new AppError(err.message, err.status);
@@ -76,6 +83,9 @@ export const view = async (user) => {
       userName: user?.userName,
       email: user?.email,
       role: user?.role,
+      mobile: user?.mobile,
+      address: user?.address,
+      url: user?.url,
     });
   } catch (err) {
     throw new AppError(err.message, err.status);
