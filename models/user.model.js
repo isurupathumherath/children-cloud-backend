@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import findOrCreate from "mongoose-findorcreate";
 
 const { Schema } = mongoose;
 
@@ -18,5 +19,7 @@ const UserSchema = new Schema(
     timestamps: true,
   },
 );
+
+UserSchema.plugin(findOrCreate);
 
 export const User = mongoose.model("User", UserSchema);

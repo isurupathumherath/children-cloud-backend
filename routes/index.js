@@ -12,6 +12,7 @@ import AssignStaffRouter from "./assignStaff.route.js";
 import paymentRoute from "./payment.route.js";
 import billRouter from "./bill.route.js";
 import itemRouter from "./item.route.js";
+import googleApiRouter from "./auth.route.js";
 import BabySitterRouter from "./childAllocate.route.js";
 import paymentInqRouter from "./paymentInquery.route.js";
 
@@ -27,8 +28,9 @@ apiRouter.use("/child", childRouter);
 apiRouter.use("/assign", AssignStaffRouter);
 apiRouter.use("/payment", paymentRoute);
 apiRouter.use("/bill", billRouter);
-apiRouter.use("/item", itemRouter);
+apiRouter.use("/auth", googleApiRouter);
 apiRouter.use("/babySitter", BabySitterRouter);
 apiRouter.use("/paymentInq", paymentInqRouter);
+apiRouter.use("/item", itemRouter);
 
 export default apiRouter;
